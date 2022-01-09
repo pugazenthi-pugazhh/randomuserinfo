@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">RandomUsersInfo</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="search_name">Search Name</string>
+    <string name="view">View</string>
+    <string name="back">Back</string>
+    <string name="this_app_needs_these_permission_to_work_seemlessly">This app needs these  permission to work seamlessly</string>
+    <string name="yes_grant_permissions">Yes, Grant permissions</string>
+    <string name="allow_permission_content"><![CDATA[You have denied move permissions for getting the location to get your current weather updated
+    Allow permissions at [Setting] -> [Permissions] -> [Location]  ]]></string>
+    <string name="go_to_settings">Go to Settings</string>
+    <string name="loading">loading</string>
+    <string name="tap_here">Tap here to get your weather update ...</string>
+    <string name="internet_content">please turn on your internet and try again</string>
+
+</resources>

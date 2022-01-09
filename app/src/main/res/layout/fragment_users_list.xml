@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="?actionBarSize"
+    android:background="@color/bg_gray">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvTemp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="?selectableItemBackgroundBorderless"
+        android:ellipsize="end"
+        android:maxLines="5"
+        android:layout_marginVertical="@dimen/dp04"
+        android:paddingHorizontal="@dimen/dp08"
+        android:paddingVertical="@dimen/dp02"
+        android:singleLine="false"
+        android:textAlignment="textStart"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintEnd_toStartOf="@+id/animationView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animationView"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:adjustViewBounds="true"
+        app:layout_constraintTop_toTopOf="@+id/tvTemp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvTemp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:lottie_loop="false"
+        app:lottie_speed="1"
+        tools:ignore="ContentDescription" />
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/edSearch"
+        style="@style/ToolbarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:layout_marginTop="@dimen/dp16"
+        android:imeOptions="actionDone"
+        android:maxLines="1"
+        android:singleLine="true"
+        app:iconifiedByDefault="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTemp" />
+
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/idNestedSV"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edSearch"
+        tools:context=".MainActivity">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvUsersList"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="?actionBarSize"
+                android:fastScrollEnabled="true"
+                android:nestedScrollingEnabled="false"
+                android:paddingHorizontal="@dimen/dp04"
+                android:paddingVertical="@dimen/dp04"
+                android:scrollbars="vertical"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:listitem="@layout/item_users_list" />
+
+            <ProgressBar
+                android:id="@+id/idPBLoading"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:progressBackgroundTint="@color/colorPrimary"
+                android:progressTint="@color/colorPrimary"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rvUsersList"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvListError"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@android:color/holo_red_dark"
+                android:textSize="18sp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rvUsersList"
+                tools:text="Error" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

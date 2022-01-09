@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_splash">
+    <fragment
+        android:id="@+id/nav_users_list"
+        android:name="com.randomusers.ui.fragments.UserListFragment"
+        tools:layout="@layout/fragment_users_list">
+
+        <action
+            android:id="@+id/action_nav_users_list_to_nav_users_details_view"
+            app:destination="@id/nav_users_details_view" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_users_details_view"
+        android:name="com.randomusers.ui.fragments.UserDetailsViewFragmentDialog"
+        tools:layout="@layout/fragment_user_details_view">
+        <action
+            android:id="@+id/action_nav_users_details_view_to_nav_users_list"
+            app:destination="@id/nav_users_list" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_splash"
+        android:name="com.randomusers.ui.fragments.SplashFragment"
+        tools:layout="@layout/fragment_splash">
+
+
+        <action
+            android:id="@+id/action_nav_splash_to_nav_users_list"
+            app:destination="@id/nav_users_list"
+            app:launchSingleTop="true"
+            app:popUpTo="@+id/mobile_navigation"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>

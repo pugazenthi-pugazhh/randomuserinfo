@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="DialogTheme">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:fragmentEnterTransition">@anim/anim_in</item>
+        <item name="android:fragmentExitTransition">@anim/anim_out</item>
+
+    </style>
+
+    <style name="ToolbarStyle" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- search view about -->
+        <item name="android:text">@string/search_name</item>
+        <item name="android:editTextColor">@color/colorPrimary</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textColorHint">@color/colorPrimary</item>
+        <item name="android:textCursorDrawable">@color/textHint</item>
+        <item name="closeIcon">@drawable/ic_baseline_close_24</item>
+        <item name="searchHintIcon">@android:drawable/ic_search_category_default</item>
+        <item name="searchIcon">@android:drawable/ic_search_category_default</item>
+        <item name="android:longClickable">false</item>
+        <item name="android:queryHint">@null</item>
+    </style>
+
+
+</resources>
